@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kakao_map/src/home_screen.dart';
+import 'package:flutter_kakao_map/src/main_map_kakao.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 
 void main() {
@@ -34,7 +36,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: KakaoMap(),
+      home: HomeScreen(),
+      // home: KakaoMap(),
     );
   }
 }
