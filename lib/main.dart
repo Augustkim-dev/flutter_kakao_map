@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_kakao_map/src/home_screen.dart';
 import 'package:flutter_kakao_map/src/main_map_kakao.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 
-void main() {
-  AuthRepository.initialize(appKey: 'dc4ea77a31f044ff48e3a4d1328c25b6');
+void main() async {
+  await dotenv.load(fileName: 'assets/env/.env');
+
+  AuthRepository.initialize(appKey: dotenv.env['APP_KEY'] ?? '');
   runApp(const MyApp());
 }
 
